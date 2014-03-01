@@ -3,10 +3,7 @@
 <%= form_for :films, url: films_path do |f| %>
   <p>
     <%= f.label :title %><br>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
+    <%= f.text_field :title %>
   </p>
  
   <p>
