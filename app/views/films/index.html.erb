@@ -1,0 +1,17 @@
+<h1>All My Films</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+ 
+  <% @films.each do |film| %>
+    <tr>
+      <td><%= film.title %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to 'New film', new_film_path %>
+</p>
