@@ -1,13 +1,17 @@
 class FilmsController < ApplicationController
 	
 	def new
+		@film = Film.new
 	end
 
 	def create
-		@film = Film.new(film_params)
+		@film = Film.new(params[:film].permit(:title))
 
-		@film.save
-		redirect_to @film
+		if @film.save
+			redirect_to @film
+		else
+			render 'new'
+		end
 	end
 
 	def show
